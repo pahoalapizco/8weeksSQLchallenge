@@ -31,9 +31,21 @@ El código SQL que responde a todas las preguntas de este caso de estudio estan 
 
 ![Q3](./imgs/q3_response.png)
 
-4. What is the most purchased item on the menu and how many times was it purchased by all customers?
-5. Which item was the most popular for each customer?
-6. Which item was purchased first by the customer after they became a member?
+4. What is the most purchased item on the menu and how many times was it purchased by all customers? <br>
+**Resultado**: Ramen es el producto más vendido del menú con un total de 8 ventas en total.
+
+![Q4](./imgs/q4_response.png)
+
+5. Which item was the most popular for each customer? <br>
+**Resultado**: Para los clientes A y C el producto/platillo más popular es el ramen, sin embargo B a comprado por igual los 3 distintos platillos del menu.
+
+![Q5](./imgs/q5_response.png)
+
+6. Which item was purchased first by the customer after they became a member? <br>
+**Resultado**: El primer platillo que compró el cliente A fue Ramen y B compró Sushi.
+
+![Q6](./imgs/q6_response.png)
+
 7. Which item was purchased just before the customer became a member?
 8. What is the total items and amount spent for each member before they became a member?
 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
