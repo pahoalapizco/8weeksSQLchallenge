@@ -46,7 +46,15 @@ El código SQL que responde a todas las preguntas de este caso de estudio estan 
 
 ![Q6](./imgs/q6_response.png)
 
-7. Which item was purchased just before the customer became a member?
-8. What is the total items and amount spent for each member before they became a member?
+7. Which item was purchased just before the customer became a member? <br>
+**Resultado**: Antes de convertirse en miembros de Danny's Diner, el cliente B compró Curry, mientras que el cliente A compro tanto Curry como Sushi en una misma orden.
+
+![Q7](./imgs/q7_response.png)
+
+8. What is the total items and amount spent for each member before they became a member? <br>
+**Resultado**: Antes de convertirse en miembros del restaurante, B compró 3 platillos y gastó en total de $40 USD, y A compró 2 platillos gastando un total de $25 USD
+
+![Q8](./imgs/q8_response.png)
+
 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
