@@ -83,4 +83,36 @@ SELECT MEM.customer_id,  COUNT(S.product_id) AS total_items, SUM(M.price) AS tot
 FROM sales AS S
 	INNER JOIN menu AS M ON M.product_id = S.product_id
 	INNER JOIN members AS MEM ON MEM.customer_id = S.customer_id AND MEM.join_date > S.order_date
+GROUP BY MEM.customer_id;
+
+-- q9: If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
+-- Total de puntos por cliente registrado: B es el que mayor cantidad de punto a acumulado con 940, y A solo 860.
+SELECT S.customer_id, SUM(points) AS total_points 
+FROM sales AS S
+    INNER JOIN members AS MEM ON MEM.customer_id = S.customer_id    
+	INNER JOIN (
+		SELECT product_id, CASE WHEN product_name = 'sushi' THEN price * 20 ELSE price * 10 END AS points
+        FROM menu 
+    ) AS T ON T.product_id = S.product_id
+GROUP BY S.customer_id;
+
+
+-- q10: In the first week after a customer joins the program (including their join date) they earn 2x points on all items, 
+-- 		not just sushi - how many points do customer A and B have at the end of January?
+
+SELECT MEM.customer_id, 
+	SUM(
+		CASE WHEN (S.order_date BETWEEN MEM.join_date AND MEM.join_date+7) OR (M.product_name = 'sushi') THEN price * 20
+			ELSE M.price * 10 END
+    ) AS points
+FROM sales AS S
+    INNER JOIN members AS MEM ON MEM.customer_id = S.customer_id AND MEM.join_date
+	INNER JOIN menu AS M ON M.product_id = S.product_id
+WHERE S.order_date <=  '2021-01-31'
 GROUP BY MEM.customer_id
+ORDER BY S.customer_id;
+
+
+
+
+

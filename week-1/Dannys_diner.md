@@ -56,5 +56,13 @@ El código SQL que responde a todas las preguntas de este caso de estudio estan 
 
 ![Q8](./imgs/q8_response.png)
 
-9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
-10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
+9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have? <br>
+**Resultado**: Total de puntos por cliente registrado: B es el que mayor cantidad de punto a acumulado con 940, y A solo 860.
+
+![Q9](./imgs/q9_response.png)
+
+
+10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January? <br>
+**Resultado**: Durante la primer semana despues de registrarse como cliente en Danyn's Diner el cliente A realizó más compras por lo cuál logró acumular un total de 1,370 puntos, en cambio B solo consiguió 940.
+
+![Q10](./imgs/q10_response.png)
