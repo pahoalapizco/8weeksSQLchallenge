@@ -66,3 +66,22 @@ El código SQL que responde a todas las preguntas de este caso de estudio estan 
 **Resultado**: Durante la primer semana despues de registrarse como cliente en Danyn's Diner el cliente A realizó más compras por lo cuál logró acumular un total de 1,370 puntos, en cambio B solo consiguió 940.
 
 ![Q10](./imgs/q10_response.png)
+
+## Bonus
+**Descripción**: <br>
+The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
+
+<div align="left">
+  Recreate the following table output using the available data:
+
+  <img src="./imgs/b1_expected.png" alt="Week 1 Cover" width="300" heigh="300">
+</div>
+
+**Resultado**: La tabla muenstra la relación de clientes y sus comprar realizadas, con un marcador de si era o no miembro del restaurante al momento de realizar la compra, donde:
+- Y = El cliente registrado al momento de la compra
+- N = El cliente no registrado al momento de la compra.
+
+La tabla resultante se encampsuló en una vista llamada `vsales`. <br>
+<code> SELECT * FROM vsales; </code>
+
+![B1 resultado](./imgs/b1_results.png)

@@ -99,7 +99,8 @@ GROUP BY S.customer_id;
 
 -- q10: In the first week after a customer joins the program (including their join date) they earn 2x points on all items, 
 -- 		not just sushi - how many points do customer A and B have at the end of January?
-
+-- Durante la primer semana despues de registrarse como cliente en Danyn's Diner el cliente A realizó más compras por lo cuál logró acumular
+-- un total de 1,370 puntos, en cambio B solo consiguió 940.
 SELECT MEM.customer_id, 
 	SUM(
 		CASE WHEN (S.order_date BETWEEN MEM.join_date AND MEM.join_date+7) OR (M.product_name = 'sushi') THEN price * 20
