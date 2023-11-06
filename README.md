@@ -26,3 +26,6 @@ Dany provee 3 tablas clave para responder todas y cada una de las preguntas de n
 - `members`'
 
 ![Diagrama Entidad Relación](./imgs/week-1_Diagram.png)
+<br>
+
+[Solución de la semana #1](./week-1/Dannys_diner.md)
