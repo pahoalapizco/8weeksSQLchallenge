@@ -29,3 +29,32 @@ Dany provee 3 tablas clave para responder todas y cada una de las preguntas de n
 <br>
 
 [Solución de la semana #1](./week-1/Dannys_diner.md)
+
+## Week 2: [Pizza Runner](https://8weeksqlchallenge.com/case-study-2/)
+<p align="center">
+  <img src="./imgs/week-2_cover.png" alt="Week 1 Cover" width="500" heigh="500">
+</p>
+<h3 align="center"> Descripción </h3>
+
+**Pizza Runner** es una pizzeria que cuenta con un sistema de delivery por medio de una aplicación, donde sus clientes pueden ordenar cualquiera de sus pizzas del menu y agregar o quitar ingredientes, a su vez cada orden es asignada a alguno de sus repartidores llamados "runners".
+
+En este caso de estudio se nos proporciona una base de datos relacional con los datos correspondinetes a las ordenes de clientes, ordenes asignadas a cada repartidor, tipos de pizza, etc. Sin embargo algunas tablas requieren de limpieza y formateo de los datos para poder crear las queries y generar cálculos.
+
+El objetivo responder a las preguntas del caso de estudio, limpiar los datos y analizarlos. En esta ocasión tenemos muchas más preguntas que responder, se categorizan de la siguiente manera:
+- Pizza Metrics
+- Runner and Customer Experience
+- Ingredient Optimisation
+- Pricing and Ratings
+- Bonus DML Challenges (DML = Data Manipulation Language)
+
+La base de datos `pizza_runner ` se compone de las siguinetes tablas
+- `runners`
+- `customer_orders`
+- `runner_orders`
+- `pizza_names`
+- `pizza_recipes`
+- `pizza_toppings`
+
+
+![Diagrama Entidad Relación - Week 2](./imgs/week-2_Diagram.png)
+<br>
