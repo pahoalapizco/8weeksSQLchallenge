@@ -71,6 +71,7 @@ El código SQL que responde a todas las preguntas de este caso de estudio estan 
 **Descripción**: <br>
 The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
 
+### Bonus #1
 <div align="left">
   Recreate the following table output using the available data:
 
@@ -85,3 +86,19 @@ La tabla resultante se encampsuló en una vista llamada `vsales`. <br>
 <code> SELECT * FROM vsales; </code>
 
 ![B1 resultado](./imgs/b1_results.png)
+<br>
+
+### Bonus #2
+**Descripción**: Danny also requires further information about the `ranking` of customer products, but he purposely does not need the `ranking` for non-member purchases so he expects null ranking values for the records when customers are not yet part of the loyalty program.
+
+La tabla resultante se encampsuló en una vista llamada `vRanking`. <br>
+<code> SELECT * FROM vRanking; </code>
+
+![B2 resultado](./imgs/b2_results.png)
+
+### Conclusión
+A lo largo del primer caso de estudio `Danny's Diner` se aplicaron los siguientes elementos de querying:
+- Unión de tablas con `INNER JOIN` y `LEFT JOIN`.
+- Agrupamiento con `GROUP BY`.
+- Ordenamiento con `ORDER BY`.
+- Sub queries dando paso a tablas virtuales para incluirlas a otras tablas fisicas por medio de `JOINS`.
