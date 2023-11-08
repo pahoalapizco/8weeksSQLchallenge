@@ -17,6 +17,7 @@ AS
 SELECT * FROM vsales;
 
 -- Bonus #2: Ranking de los productos preferedidos de los clientes registrados como miembros del restaurante.
+CREATE OR REPLACE VIEW vRanking (customer_id, order_date, product_name, price, member, ranking)  AS
 SELECT S.customer_id, S.order_date, M.product_name, M.price,
 	CASE WHEN ISNULL(MEM.customer_id) OR MEM.join_date > S.order_date THEN "N" ELSE "Y" END AS member,
     CASE WHEN ISNULL(MEM.customer_id) OR MEM.join_date > S.order_date THEN NULL 
@@ -28,3 +29,5 @@ SELECT S.customer_id, S.order_date, M.product_name, M.price,
 FROM sales AS S
 	INNER JOIN menu AS M ON M.product_id = S.product_id
     LEFT JOIN members AS MEM ON MEM.customer_id = S.customer_id;
+
+SELECT * FROM vRanking;
