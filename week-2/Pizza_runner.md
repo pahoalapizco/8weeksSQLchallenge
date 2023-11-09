@@ -15,6 +15,213 @@ Tablas:
 
 ![Diagrama Entidad Relación - Week 2](../imgs/week-2_Diagram.png)
 
+## Estandarización
+En el [script inicial](./CREATED_DB_TABLES.sql) algunos los datos que se nos proporcionan tienen discrepancias como valores vacíos y "null" (si, tal cual en texto), o bien el tipo de dato de algunas columnas no concuerda con el valor que almacenan y que se requiere para una buena eficiencia en la ingesta y consulta de datos.
+
+
+La estandarización se aplicó a las tablas `customer_orders` y `runner_orders`, con el objetivo de no trabajar con valores vacíos o incorrectos para evitar futuros inconvenientes en el querying, así como establecer un correcto tipado en columnas que manejan fechas y valores numéricos, de esta forma podremos aplicar calculos matemáticos como sumas, restas, promedios, etc.
+
+**Limpieza de valores**:
+<table>
+  <thead>
+    <th>
+      Tabla
+    </th>
+    <th>
+      Columna
+    </th>
+    <th>
+      Valores Anteriores
+    </th>
+    <th>
+      Valores Nuevos
+    </th>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td  rowspan="2">
+        customer_orders
+      </td>
+      <td>
+        exclusions
+      </td>
+      <td>
+        " ", "null"
+      </td>
+      <td>
+        NULL
+      </td>
+    </tr>
+    <tr>
+      <td>
+        extras
+      </td>
+      <td>
+        " ", "null"
+      </td>
+      <td>
+        NULL
+      </td>
+    </tr>
+    <tr>
+      <td  rowspan="4">
+        runner_orders
+      </td>
+      <td>
+        pickup_time
+      </td>
+      <td>
+        " ", "null"
+      </td>
+      <td>
+        NULL
+      </td>
+    </tr>
+    <tr>
+      <td>
+        duration
+      </td>
+      <td>
+        " ", "null"
+      </td>
+      <td>
+        NULL
+      </td>
+    </tr>
+    <tr>
+      <td>
+        distance
+      </td>
+      <td>
+        " ", "null"
+      </td>
+      <td>
+        NULL
+      </td>
+    </tr>
+    <tr>
+      <td>
+        cancelation
+      </td>
+      <td>
+        " ", "null"
+      </td>
+      <td>
+        NULL
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+**Estandarización**:
+
+📢 Importante tener en cuenta que las unidades de medida para la distancia (`distance`) y la duración (`duration`) son kilometros (`km`) y minutos (`min`) respectivamente.
+
+<table>
+  <thead>
+    <th>
+      Tabla
+    </th>
+    <th>
+      Columna
+    </th>
+    <th>
+      Valor Anterior
+    </th>
+    <th>
+      Valor Nuevo
+    </th>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td  rowspan="2">
+        runner_orders
+      </td>
+      <td>
+        duration
+      </td>
+      <td>
+        "mins", "minutes", "minute"
+      </td>
+      <td>
+        (vacío)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        distance
+      </td>
+      <td>
+        "km", " km"
+      </td>
+      <td>
+        (vacío)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+**Corrección de tipado**:
+<table>
+  <thead>
+    <th>
+      Tabla
+    </th>
+    <th>
+      Columna
+    </th>
+    <th>
+      Tipado Anterior
+    </th>
+    <th>
+      Tipado Nuevos
+    </th>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td  rowspan="3">
+        runner_orders
+      </td>
+      <td>
+        pickup_time
+      </td>
+      <td>
+        VARCHAR(19)
+      </td>
+      <td>
+        DATETIME
+      </td>
+    </tr>
+    <tr>
+      <td>
+        duration
+      </td>
+      <td>
+        VARCHAR(10)
+      </td>
+      <td>
+        FLOAT
+      </td>
+    </tr>
+    <tr>
+      <td>
+        distance
+      </td>
+      <td>
+        VARCHAR(7)
+      </td>
+      <td>
+        INTEGER
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 ## Preguntas
 Este caso de estudio divide las preguntas por categoría.
 - Pizza Metrics

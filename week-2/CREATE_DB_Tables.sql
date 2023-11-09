@@ -52,12 +52,12 @@ CREATE TABLE runner_orders (
   pickup_time VARCHAR(19),
   distance VARCHAR(7),
   duration VARCHAR(10),
-  cancellation VARCHAR(23)
+  cancelation VARCHAR(23)
 );
 
 
 INSERT INTO runner_orders
-	(order_id, runner_id, pickup_time, distance, duration, cancellation)
+	(order_id, runner_id, pickup_time, distance, duration, cancelation)
 VALUES
   ('1', '1', '2020-01-01 18:15:34', '20km', '32 minutes', ''),
   ('2', '1', '2020-01-01 19:10:54', '20km', '27 minutes', ''),
