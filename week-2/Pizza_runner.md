@@ -37,7 +37,6 @@ La estandarización se aplicó a las tablas `customer_orders` y `runner_orders`,
       Valores Nuevos
     </th>
   </thead>
-
   <tbody>
     <tr>
       <td  rowspan="2">
@@ -233,13 +232,37 @@ Este caso de estudio divide las preguntas por categoría.
 ### Pizza Metrics 📊
 El código SQL que responde a todas las preguntas de esta categoría estan en el archivo [pizza_runner_questions_metrics.sql](./pizza_runner_questions_metrics.sql)
 
-1. How many pizzas were ordered?
-2. How many unique customer orders were made?
-3. How many successful orders were delivered by each runner?
-4. How many of each type of pizza was delivered?
-5. How many Vegetarian and Meatlovers were ordered by each customer?
-6. What was the maximum number of pizzas delivered in a single order?
-7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
-8. How many pizzas were delivered that had both exclusions and extras?
-9. What was the total volume of pizzas ordered for each hour of the day?
-10. What was the volume of orders for each day of the week?
+1. How many pizzas were ordered? <br>
+**Resultado**: 14 Pizzas ha sido ordenadas por los clientes de pizza runner.<br>
+![Q1](./imgs/q1_response.png)
+
+2. How many unique customer orders were made? <br>
+**Resultado**: De las 14 ordenes totales, 4 estan incluidas dentro las 10 ordnes unicas (1 orden tiene más de un producto).<br>
+![Q2](./imgs/q2_response.png)
+
+3. How many successful orders were delivered by each runner?<br>
+**Resultado**: Repartidos 1 con 4 entregas es quien lleva la delantera en entregas satisfactorias. <br>
+![Q3](./imgs/q3_response.png)
+
+4. How many of each type of pizza was delivered?<br>
+**Resultado**: 9 `Meatlovers` fueron entregadas, y solo 3 `Vegetarian` <br>
+![Q4](./imgs/q4_response.png)
+
+5. How many Vegetarian and Meatlovers were ordered by each customer? <br>
+**Resultado**: <br>
+![Q5](./imgs/q5_response.png)
+
+6. What was the maximum number of pizzas delivered in a single order? <br>
+**Resultado**: En la orden número 4 se entregaron 3 pizzas, la mayor de todas las orden registradas. <br>
+![Q6](./imgs/q6_response.png)
+
+7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes? <br>
+**Resultado**: Solo el cliente 104 ha ordenado pizza con y sin cambios a en sus ordenes. <br>
+![Q7](./imgs/q7_response.png)
+
+8. How many pizzas were delivered that had both exclusions and extras? <br>
+**Resultado**: De las pizzas entregadas, solo una pizza tiene ambos cambios. <br>
+![Q8](./imgs/q8_response.png)
+J
+9. What was the total volume of pizzas ordered for each hour of the day? <br>
+10. What was the volume of orders for each day of the week? <br>
