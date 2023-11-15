@@ -263,6 +263,15 @@ El código SQL que responde a todas las preguntas de esta categoría estan en el
 8. How many pizzas were delivered that had both exclusions and extras? <br>
 **Resultado**: De las pizzas entregadas, solo una pizza tiene ambos cambios. <br>
 ![Q8](./imgs/q8_response.png)
-J
+
 9. What was the total volume of pizzas ordered for each hour of the day? <br>
+**Resultado**: Las 11:00 am y las 07:00 pm son los horarios con menor volumen de pizzas vendidas. <br>
+La respuesta a esta pregunta la respondí con 2 formas distintas: <br>
+    1. Calculando el volumen de pizzas vendidas solo en las horas registradas en la BBDD <br>
+      ![Q9](./imgs/q9_response.png)
+    2. Incluyendo las 24 horas del día, donde aquellas que no estan registradas en la BBDD marcan como volumen en 0. <br>
+      ![Q9](./imgs/q9_response_S2.png)
+
 10. What was the volume of orders for each day of the week? <br>
+**Resultado**: Los días con mayor volumen de pizza vendidas son Miercoles y Sabado. <br>
+![Q10](./imgs/q10_response.png)

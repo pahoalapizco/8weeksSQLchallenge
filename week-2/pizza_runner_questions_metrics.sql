@@ -56,3 +56,33 @@ FROM customer_orders AS C
 	INNER JOIN runner_orders AS R ON R.order_id = C.order_id AND R.cancelatioN IS NULL
 WHERE C.exclusions IS NOT NULL AND C.extras IS NOT NULL
 GROUP BY C.customer_id;
+
+-- q9: What was the total volume of pizzas ordered for each hour of the day? 
+-- Solución 1: Incluye solo las horas regisitradas en la BBDD 
+SELECT HOUR(order_time) AS `hour`, COUNT(HOUR(order_time)) AS volume
+FROM customer_orders
+GROUP BY HOUR(order_time)
+ORDER BY `hour`;
+
+-- Solución 2: Incluye las 24 horas del día
+DROP TABLE IF EXISTS hours;
+CREATE TEMPORARY TABLE hours (
+	hour_of_day TIME
+);
+
+INSERT INTO hours (hour_of_day)
+VALUES (TIME('00')), (TIME('01:00:00')),(TIME('02:00:00')),(TIME('03:00:00')),(TIME('04:00:00')),(TIME('05:00:00')),(TIME('06:00:00')),(TIME('07:00:00')),(TIME('08:00:00')),(TIME('09:00:00')),(TIME('10:00:00')),(TIME('11:00:00')),
+	   (TIME('12:00:00')), (TIME('13:00:00')),(TIME('14:00:00')),(TIME('15:00:00')),(TIME('16:00:00')),(TIME('17:00:00')),(TIME('18:00:00')),(TIME('19:00:00')),(TIME('20:00:00')),(TIME('21:00:00')),(TIME('22:00:00')),(TIME('23:00:00'));
+
+SELECT H.hour_of_day, COUNT(C.pizza_id) AS Volumne
+FROM customer_orders AS C
+	RIGHT JOIN hours H ON HOUR(H.hour_of_day) = HOUR(C.order_time)
+GROUP BY H.hour_of_day
+ORDER BY H.hour_of_day;
+
+-- q10: What was the volume of orders for each day of the week?
+SELECT WEEKDAY(order_time) AS `day`, DAYNAME(order_time) AS daye_name, COUNT(DAY(order_time)) AS volume
+FROM customer_orders
+GROUP BY WEEKDAY(order_time), DAYNAME(order_time)
+ORDER BY `day`;
+
